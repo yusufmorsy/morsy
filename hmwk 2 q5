@@ -1,0 +1,44 @@
+#include <iostream>
+#include <iomanip>
+using namespace std;
+
+int main() {
+    char type;
+    int days;
+    double total;
+    
+    cout << "Which car type ( A, B, C, or D ) would you like to rent?" << endl;
+    cin >> type;
+    cout << "How many days would you like to rent this car?" << endl;
+    cin >> days;
+    
+    if(days < 0) {
+        cout << "Please enter valid input.";
+    }
+    else { 
+        switch (type) {
+            case 'A':
+            total = 1.09 * (days * 15 + 100);
+            cout << fixed << setprecision(2) << "Your bill total is $" << total << endl;
+            break;
+            
+            case 'B':
+            total = 1.09 * (days * 20 + 150);
+            cout << fixed << setprecision(2) << "Your bill total is $" << total << endl;
+            break;
+        
+            case 'C':
+            total = 1.09 * (days * 25 + 200);
+            cout << fixed << setprecision(2) << "Your bill total is $" << total << endl;
+            break;
+        
+            case 'D':
+            total = 1.09 * (days * 30 + 250);
+            cout << fixed << setprecision(2) << "Your bill total is $" << total << endl;
+            break;
+        
+            default:
+            cout << "Please enter valid input.";
+        }
+    }
+}
