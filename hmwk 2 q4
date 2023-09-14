@@ -1,0 +1,60 @@
+#include <iostream>
+#include <iomanip>
+using namespace std;
+
+int main() {
+    double budget;
+    char choice;
+    
+    cout << "What is your budget?" << endl;
+    cin >> budget;
+    
+    cout << "Which of these seats would you like to take (G, B, P or O)?" << endl;
+    cin >> choice;
+    if(budget < 0) {
+        cout << "Please enter valid input.";
+    }
+    else { 
+        switch (choice) {
+            case 'G':
+            if(budget < 1075.15) {
+               cout << "Sorry, this seat is outside your budget.";
+            }
+            else{
+                cout << "Yes, this seat is within your budget!";
+            }
+            break;
+            
+            case 'B':
+            if(budget < 1340.96) {
+                cout << "Sorry, this seat is outside your budget.";
+            }
+            else{
+                cout << "Yes, this seat is within your budget!";
+            }
+            break;
+        
+            case 'P':
+            if(budget < 1684.29) {
+                cout << "Sorry, this seat is outside your budget.";
+            }
+            else{
+                cout << "Yes, this seat is within your budget!";
+            }
+            break;
+        
+            case 'O':
+            if(budget < 1950.33) {
+                cout << "Sorry, this seat is outside your budget.";
+            }
+            else{
+                cout << "Yes, this seat is within your budget!";
+            }
+            break;
+        
+            default:
+            cout << "Please enter valid input.";
+        }
+    }
+    return 0;
+}
