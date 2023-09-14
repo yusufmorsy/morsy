@@ -1,0 +1,26 @@
+#include <iostream>
+#include <iomanip>
+using namespace std;
+
+int main() {
+    
+    double money = 1000;
+    double withdrawlAmount;
+    
+    cout << "Enter the amount to be withdrawn from your bank account:" << endl;
+    cin >> withdrawlAmount;
+    double final = money - withdrawlAmount;
+    setprecision(5);
+    
+    if (withdrawlAmount <= 0) {
+        cout << "Invalid input. Withdrawn amount must be a non-negative value." << endl;
+    }
+    else if (withdrawlAmount > 900) {
+        cout << "Transaction Failed!" << endl;
+    }
+    else {
+        cout << fixed << setprecision(2) << "Transaction Successful! You're balance is $" << final << endl;
+    }
+    
+    return 0;
+}
