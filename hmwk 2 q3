@@ -1,0 +1,25 @@
+#include <iostream>
+#include <iomanip>
+using namespace std;
+
+int main() {
+    
+    int weather;
+    int wind;
+    
+    cout << "What is tomorrow's temperature looking like?" << endl;
+    cin >> weather;
+    cout << "What is tomorrow's wind speed looking like?" << endl;
+    cin >> wind;
+    
+    if (weather < 0 || wind < 0) {
+        cout << "Please enter valid input." << endl;
+    }
+    else if (weather >= 20 && weather <= 30 && wind <= 50) {
+        cout << "The weather conditions are ideal for skiing tomorrow." << endl;
+    }
+    else {
+        cout << "The weather conditions are not ideal for skiing tomorrow." << endl;
+    }
+    return 0;
+}
