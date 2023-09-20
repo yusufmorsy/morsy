@@ -1,0 +1,43 @@
+// CSCI 1300 Fall 2023
+// Author: Yusuf Morsy
+// TA: Juan Vasquez
+// Question 4
+
+#include <iostream>
+
+using namespace std;
+
+double calculatePaintCost (double area, char paint_grade) {
+    double cost;
+    switch (paint_grade) {
+        case 'A':
+            cost = 0.75 * area;
+        break;
+        case 'B':
+            cost = 1.25 * area;
+        break;
+        case 'C':
+            cost = 2.75 * area;
+        break;
+    }
+    return cost;
+}
+
+int main() {
+    double area, cost;
+    char paint_grade;
+    
+    cout << "Enter area of the four walls (in sq ft)" << endl;
+    cin >> area;
+    cout << "Select the paint grade (A, B, or C)" << endl;
+    cin >> paint_grade;
+    
+    if(area <= 0 || paint_grade != 'A' && paint_grade != 'B' && paint_grade != 'C') {
+        cout << "Please enter a valid input" << endl;
+    } 
+    else {
+        cost = calculatePaintCost(area, paint_grade);
+        cout << "The total cost to paint all four walls: $" << cost << endl;
+    }
+    
+}
