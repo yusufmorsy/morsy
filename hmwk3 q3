@@ -1,0 +1,30 @@
+// CSCI 1300 Fall 2023
+// Author: Yusuf Morsy
+// TA: Juan Vasquez
+// Question 3
+
+#include <iostream>
+
+using namespace std;
+
+double calculateWallArea (double length, double width) {
+    return (2 * (length * 10)) + (2 * (width * 10));
+}
+
+int main() {
+    double length, width, area;
+    
+    cout << "Enter length of the base of the house (in ft)" << endl;
+    cin >> length;
+    
+    cout << "Enter width of the base of the house (in ft)" << endl;
+    cin >> width;
+    
+    if(length <= 0 || width <= 0) {
+        cout << "Please enter a valid input" << endl;
+    }
+    else {
+        area = calculateWallArea(length, width);
+        cout << "The total area of all the four walls: " << calculateWallArea(length, width) << " sq ft" << endl;
+    }
+}
