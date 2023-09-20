@@ -1,0 +1,48 @@
+// CSCI 1300 Fall 2023
+// Author: Yusuf Morsy
+// TA: Juan Vasquez
+// Question 5 🥸
+
+#include <iostream>
+using namespace std;
+
+double estimatePaintingTime(double area, char painter) {
+    double time;
+    switch (painter) {
+        case 'W':
+            time = area * 12 / 5 / 60;
+        break;
+        case 'X':
+            time = area * 10 / 3 / 60;
+        break;
+        case 'Y':
+            time = area * 5 / 2 / 60;
+        break;
+        case 'Z':
+            time = area * 15 / 7 / 60;
+        break;
+        default:
+            time = 0;
+    }
+    return time;
+}
+
+int main() {
+    double area, time;
+    char painter;
+    
+    cout << "Enter area of the four walls (in sq ft)" << endl;
+    cin >> area;
+    cout << "Select a painter (W, X, Y or Z)" << endl;
+    cin >> painter;
+    
+    time = estimatePaintingTime(area, painter);
+    
+    if (time <= 0) {
+        cout << "Please enter a valid input" << endl;
+    }
+    else {
+        cout << "The time taken to paint all four walls by painter " << painter <<": " << time << " hours" << endl;
+    }
+    return 0;
+}
