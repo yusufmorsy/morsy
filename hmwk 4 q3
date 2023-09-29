@@ -1,0 +1,63 @@
+// CSCI 1300 Fall 2023
+// Author: Yusuf Morsy
+// TA: Juan Vasquez
+// Question 3
+
+#include <iostream>
+#include <string>
+using namespace std;
+
+int manageFeeder(int feeder, int days_since_last_fill) {
+    switch (feeder) {
+        case 1:
+            return (21 - (days_since_last_fill * 3)) / 3;
+        break;
+        case 2:
+            return (37 - (days_since_last_fill * 2)) / 2;
+        break;
+        case 3:
+            return (17 - (days_since_last_fill * 4)) / 4;
+        break;
+    }
+}
+
+int main() {
+    int feed1, feed2, feed3;
+    
+    cout << "How many days ago was feeder 1 filled?" << endl;
+    cin >> feed1;
+    if (feed1 < 0) {
+        cout << "Invalid input!" << endl;
+        return 0;
+    }
+    cout << "How many days ago was feeder 2 filled?" << endl;
+    cin >> feed2;
+    if (feed2 < 0) {
+        cout << "Invalid input!" << endl;
+        return 0;
+    }
+    cout << "How many days ago was feeder 3 filled?" << endl;
+    cin >> feed3;
+    if (feed3 < 0) {
+        cout << "Invalid input!" << endl;
+        return 0;
+    }
+    
+    
+    int feed1return = manageFeeder(1,feed1);
+    if(feed1return < 0) {
+        feed1return = 0;
+    }
+    int feed2return = manageFeeder(2,feed2);
+    if(feed2return < 0) {
+        feed2return = 0;
+    }
+    int feed3return = manageFeeder(3,feed3);
+    if(feed3return < 0) {
+        feed3return = 0;
+    }
+    
+    cout << "Feeder 1 will need to be filled in " << feed1return << " days, feeder 2 will need to be filled in " << feed2return << " days, and feeder 3 will need to be filled in " << feed3return <<" days." << endl;
+
+    return 0;
+}
