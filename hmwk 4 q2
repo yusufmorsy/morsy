@@ -1,0 +1,50 @@
+// CSCI 1300 Fall 2023
+// Author: Yusuf Morsy
+// TA: Juan Vasquez
+// Question 2
+
+#include <iostream>
+#include <string>
+using namespace std;
+
+string composeMessage(string first_name, string last_name, char position) {
+    switch(position) {
+        case 'P': 
+            return "Welcome Aboard " + first_name + " " + last_name + "! The passenger rooms are thru the third door on the right";
+        break;
+        case 'C':
+            return "Welcome Aboard " + first_name + " " + last_name + "! The captain's quarters are up the stairs on the left";
+        break;
+        case 'E':
+            return "Welcome Aboard " + first_name + " " + last_name + "! The engine rooms are below deck down the second aft stairway";
+        break;
+        default:
+            return "Welcome Aboard " + first_name + " " + last_name + "! The cartography chamber is up the stairs on the bow";
+    }
+}
+
+int main()
+{
+    //Declare variables
+    string first_name, last_name;
+    char position;
+
+    //Capture user input
+    cout << "What is your first name?" << endl;
+    cin >> first_name;
+    cout << "What is your last name?" << endl;
+    cin >> last_name;
+    cout << "What is your position? Enter P for passenger, C for captain, E for engineer, and N for navigator:" << endl;
+    cin >> position;
+
+    //Validate input
+    if (position != 'P' && position != 'C' && position != 'E' && position != 'N') {
+        cout << "Invalid position!" << endl;
+        return 0;
+    }
+
+    //Compose and display message
+    string message = composeMessage(first_name, last_name, position);
+    cout << message << endl;
+    return 0;
+}
